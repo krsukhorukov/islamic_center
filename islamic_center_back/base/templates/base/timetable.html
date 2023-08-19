@@ -1,0 +1,138 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/timetable.css' %}">
+
+<div>
+    <form>
+
+        <h1>Расписание молитв</h1>
+        <p>
+            <label>Выбор местоположения</label>
+            <select>
+                <option value="1">Москва</option>
+                <option value="2">Санкт-Петербург</option>
+                <option value="3">Новосибирск</option>
+                <option value="4">Екатеринбург</option>
+                <option value="5">Нижний Новгород</option>
+                <option value="6">Казань</option>
+                <option value="7">Челябинск</option>
+                <option value="8">Омск</option>
+                <option value="9">Самара</option>
+                <option value="10">Ростов-на-Дону</option>
+                <option value="11">Уфа</option>
+                <option value="12">Красноярск</option>
+                <option value="13">Пермь</option>
+                <option value="14">Воронеж</option>
+                <option value="15">Волгоград</option>
+                <option value="16">Краснодар</option>
+                <option value="17">Саратов</option>
+                <option value="18">Тюмень</option>
+                <option value="19">Тольятти</option>
+                <option value="20">Ижевск</option>
+                <option value="21">Барнаул</option>
+                <option value="22">Ульяновск</option>
+                <option value="23">Иркутск</option>
+                <option value="24">Хабаровск</option>
+                <option value="25">Ярославль</option>
+                <option value="26">Владивосток</option>
+                <option value="27">Махачкала</option>
+                <option value="28">Томск</option>
+                <option value="29">Оренбург</option>
+                <option value="30">Кемерово</option>
+                <option value="31">Новокузнецк</option>
+                <option value="32">Рязань</option>
+                <option value="33">Астрахань</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Определение мазхаба</label>
+            <select name="mazhab">
+                <option value="1">Шафииты</option>
+                <option value="2">Ханафиты</option>
+                <option value="3">Малкий</option>
+                <option value="4">Ханбалиты</option>
+                <option value="5">Джафариты</option>
+            </select>
+        </p>
+        <p>
+            <h3>
+                <label>Расписание намаза на текущий месяц</label>
+            </h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Число</th>
+                        <th>День недели</th>
+                        <th>Время</th>
+                        <th>Название молитвы</th>
+                        <th>Восход</th>
+                        <th>Закат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Понедельник</td>
+                        <td>4:45</td>
+                        <td>Субх</td>
+                        <td>5:50</td>
+                        <td>18:38</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Вторник</td>
+                        <td>4:44</td>
+                        <td>Субх</td>
+                        <td>5:48</td>
+                        <td>18:40</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Среда</td>
+                        <td>4:42</td>
+                        <td>Субх</td>
+                        <td>5:46</td>
+                        <td>18:41</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Четверг</td>
+                        <td>4:40</td>
+                        <td>Субх</td>
+                        <td>5:44</td>
+                        <td>18:42</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Пятница</td>
+                        <td>4:38</td>
+                        <td>Субх</td>
+                        <td>5:42</td>
+                        <td>18:43</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Суббота</td>
+                        <td>4:36</td>
+                        <td>Субх</td>
+                        <td>5:40</td>
+                        <td>18:44</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Воскресенье</td>
+                        <td>4:34</td>
+                        <td>Субх</td>
+                        <td>5:38</td>
+                        <td>18:45</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </p>
+    </form>
+</div>
+
+{% endblock content %}

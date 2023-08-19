@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+
+
+<div>
+  <form>
+    <h1>О нашей мечети</h1>
+    <div class="image-container">
+      <img src="{% static 'media/images/1.jpg' %}" alt="Image">
+      <div class="overlay">
+        <p class="banner-text">Наша мечеть открыта для всех, кто желает познакомиться с исламом и его культурой. Мы
+          проводим регулярные молитвы и уроки, которые помогут расширить ваши познания в этой области. Мы стремимся
+          создать приятную и комфортную атмосферу для всех посетителей. Вы можете прийти сюда в любое время дня и найти
+          убежище от суеты окружающего мира.
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

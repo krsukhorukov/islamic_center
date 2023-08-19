@@ -1,0 +1,73 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/charity.css' %}">
+
+
+<div>
+    <form>
+        <h1>
+            {% if lang == 'en' %}DONATE{% endif %}
+            {% if lang == 'ru' %}ПОЖЕРТВОВАТЬ{% endif %}
+            {% if lang == 'uz' %}Xayriya qiling{% endif %}
+        </h1>
+        <p class="text-h2">
+            {% if lang == 'ru' %}СПОСОБЫ ПОЖЕРТВОВАНИЯ ИСЛАМСКОМУ СОВЕТУ ПО ОБРАЗОВАНИЮ!{% endif %}
+            {% if lang == 'en' %}WAYS TO DONATE TO THE ISLAMIC EDUCATIONAL COUNCIL!{% endif %}
+            {% if lang == 'uz' %}ISLOM TA'LIM KENGASHIGA XAYRIYA QILISH YO'LLARI!{% endif %}
+
+        </p>
+
+        <div class="container">
+            <p>
+                <a href="#">
+                    {% if lang == 'ru' %}Пожертвуйте исламскому центру с помощью дебетовой карты{% endif %}
+                    {% if lang == 'en' %}Donate To Islamic Center By Credit Or Debit HERE{% endif %}
+                    {% if lang == 'uz' %}Debet karta bilan Islom markaziga xayriya qiling{% endif %}
+                </a>
+            </p>
+        </div>
+
+        <div class="container">
+            <p><a href="#">Via Zelle Free Online Service Pay To Finance@Icgc.Us</a></p>
+        </div>
+
+        <div class="container">
+            <p><a href="#">Via Venmo:
+                    Search @I-C-G-C Or Islamic Educational Council To Donate To On The Venmo App.
+                </a>
+            </p>
+        </div>
+
+        <div class="container">
+            <p><a href="#">To Cars 4 Jannah Program Click Here!</a></p>
+        </div>
+
+        <div class="container">
+            <p><a href="#">- Via Check -
+                    Write a check to The Islamic Educational Council and mail to the following address:
+
+                    Islamic Center of Greater Cincinnati:
+                    8092 Plantation Drive.
+                    West Chester Ohio 45069 United States
+                </a>
+            </p>
+        </div>
+
+        <div class="container">
+            <p><a href="#">Do You Have An Aqeeqah Or Another Family Special Occasion To Celebrate Soon And Earn Allah's
+                    Pleasure Through It? Please Consider Starting A Campaign On Behalf Of ICGC. There Two Ways Of Doing
+                    This:
+                    1. Launch a campaign on behalf of ICGC on donation platforms such as Facebook, GoFundMe, Launchgood,
+                    etc.
+
+                    2. Start a campaign by asking donors to donate directly to ICGC through the ICGC website, Zelle,
+                    Check,
+                    Cash, Venmo, Masjid Kiosks and write the name of the campaign on the memo line.
+                </a>
+            </p>
+        </div>
+
+    </form>
+</div>
+{% endblock content %}
