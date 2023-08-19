@@ -1,0 +1,1024 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="{% static 'css/register2.css' %}">
+
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="main">
+            <div class="main-wrapper" style="min-height: calc(100vh - 166.188px);">
+                <div class="">
+                    <div class="container">
+                        <div class="content-head mt-5">
+                            <h2 class="section-title pb-4 text-uppercase text-center"><span>Membership</span></h2>
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <p class="text-medium font-600 text-center">The Islamic Center of Greater Cincinnati
+                                        (ICGC) is supported by membership dues and financial donations made by the
+                                        community. If you are not already a member of our Center consider joining us
+                                        today.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- text contents -->
+                <div class="container membership-details pt-5">
+                    <div class="row">
+                        <!-- membership benefits -->
+                        <div class="col-md-6">
+                            <div class="card card-accordion active">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h5 class="font-600 mb-0">Membership Benefits</h5>
+                                    <span class="card-accordion-icon">
+                                        <img src="{% static 'media/images/plus-circle.png' %}" alt="expand"
+                                            class="plus">
+                                        <img src="{% static 'media/images/minus-circle.png' %}" alt="expand"
+                                            class="minus">
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title font-600">Membership has many benefits, including:</h5>
+                                    <div class="icon-list-group pt-3">
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Islamic
+                                            Weekend School tuition at a discounted rate.</p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Rental of
+                                            the
+                                            Mirror Hall at a discounted rate.</p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Rental of
+                                            the
+                                            Gym Hall or multipurpose recreational building at a discounted rate. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Priority
+                                            registration in sports activities. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Priority
+                                            purchase of Eid parking passes. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Periodic
+                                            mailing of newsletters and event flyers. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            General
+                                            Body
+                                            meeting. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Voting
+                                            rights
+                                            to elect Board of Trustees members.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- membership rules -->
+                        <div class="col-md-6">
+                            <div class="card card-accordion active">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h5 class="font-600 mb-0">Membership Rules</h5>
+                                    <span class="card-accordion-icon">
+                                        <img src="{% static 'media/images/plus-circle.png' %}" alt="expand"
+                                            class="plus">
+                                        <img src="{% static 'media/images/minus-circle.png' %}" alt="expand"
+                                            class="minus">
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title font-600">Following are the membership rules:</h5>
+                                    <div class="icon-list-group pt-3">
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Any
+                                            Muslim,
+                                            18 years or older, can become a member by applying for membership and paying
+                                            annual dues. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            This
+                                            membership is valid for one year from the date of application approval.
+                                            Membership must be renewed every year. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Membership
+                                            dues must be paid in advance for a year's membership or be on automatic
+                                            payment
+                                            plan. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Voting
+                                            rights
+                                            are available to all members who have completed their paid membership for
+                                            one
+                                            year. Members elect part of the Center's executive board. </p>
+                                        <p class="icon-list"> <img src="{% static 'media/images/check-circle.png' %}">
+                                            Membership is
+                                            open only to legal residents of USA (only permanent residents and US
+                                            Citizens
+                                            can vote). </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- membership fees -->
+                        <div class="col-md-6">
+                            <div class="card card-accordion active">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h5 class="font-600 mb-0">Membership Fees</h5>
+                                    <span class="card-accordion-icon">
+                                        <img src="{% static 'media/images/plus-circle.png' %}" alt="expand"
+                                            class="plus">
+                                        <img src="{% static 'media/images/minus-circle.png' %}" alt="expand"
+                                            class="minus">
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="icon-list-group pt-3">
+                                        <p class="icon-list">
+                                            <img src="{% static 'media/images/rec.png' %}" alt="list">
+                                            <strong>Platinum $750.00</strong>
+                                            <span class="d-block">
+                                                Automatic Deduction ($65/month)
+                                            </span>
+                                        </p>
+                                        <p class="icon-list">
+                                            <img src="{% static 'media/images/rec.png' %}" alt="list">
+                                            <strong>Gold $500.00</strong>
+                                            <span class="d-block">
+                                                Automatic Deduction ($45/month)
+                                            </span>
+                                        </p>
+                                        <p class="icon-list">
+                                            <img src="{% static 'media/images/rec.png' %}" alt="list">
+
+                                            <strong>Silver $250.00 </strong>
+                                            <span class="d-block">
+                                                Automatic Deduction ($25/month)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- membership payment method -->
+                        <div class="col-md-6">
+                            <div class="card card-accordion active">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h5 class="font-600 mb-0">Payment Method</h5>
+                                    <span class="card-accordion-icon">
+                                        <img src="{% static 'media/images/plus-circle.png' %}" alt="expand"
+                                            class="plus">
+                                        <img src="{% static 'media/images/minus-circle.png' %}" alt="expand"
+                                            class="minus">
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title font-600">Membership fee may be paid all at one time or in
+                                        monthly
+                                        installments. ICGC accepts checks, credit cards, and automatic deductions. Note
+                                        the
+                                        following:</h5>
+                                    <div class="icon-list-group pt-3">
+                                        <p class="icon-list">
+                                            <img src="{% static 'media/images/rec.png' %}" alt="list">
+                                            <span>
+                                                If writing a check, make it payable to <strong>Islamic Educational
+                                                    Council</strong>.
+                                            </span>
+                                        </p>
+                                        <p class="icon-list">
+                                            <img src="{% static 'media/images/rec.png' %}" alt="list">
+                                            <span>
+                                                If using automatic withdrawal, submit a void check to the
+                                                <strong>ICGC</strong> to authorize payment.
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- apply now button -->
+                <div class="container">
+                    <!-- apply now button -->
+                    <div class="py-5 btn-apply-wrapper text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-danger btn-apply-js btn-xl w-100 text-uppercase">
+                                    <span class="me-2">Become a Member</span>
+                                    <span class="btn-icon btn-icon-right-arrow">
+                                        <img src="{% static 'media/images/next.png' %}" alt="apply">
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="step-form-wrapper" class="step-form-wrapper d-none v2 v5 py-5 m-auto no-email-verification">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <div class="step-form-main">
+                                    <div class="row step-form-main-row">
+                                        <!-- sidebar -->
+                                        <div class="col-md-4 step-form-sidebar">
+                                            <div class="step-list-sidebar">
+
+                                                <div class="step-list active" data-step="1">
+                                                    <span class="step-mark">
+                                                        <img src="{% static 'media/images/tick.png' %}" alt="complete">
+                                                    </span>
+                                                    <p class="step-title">Enter your email</p>
+                                                </div>
+
+                                                <div class="step-list" data-step="2">
+                                                    <span class="step-mark">
+                                                        <img src="{% static 'media/images/tick.png' %}" alt="complete">
+                                                    </span>
+                                                    <p class="step-title">Member Information</p>
+
+                                                    <div class="edit mt-2">
+                                                        <button type="button"
+                                                            class="btn btn-secondary btn-sm btn-edit-step-js"
+                                                            data-step="2"><img
+                                                                src="{% static 'media/images/edit.png' %}" alt="edit">
+                                                            Edit</button>
+                                                    </div>
+                                                </div>
+                                                <div class="step-list" data-step="3">
+                                                    <span class="step-mark">
+                                                        <img src="{% static 'media/images/tick.png' %}" alt="complete">
+                                                    </span>
+                                                    <p class="step-title">Membership</p>
+
+                                                    <div class="edit mt-2">
+                                                        <button type="button"
+                                                            class="btn btn-secondary btn-sm btn-edit-step-js"
+                                                            data-step="4"><img
+                                                                src="{% static 'media/images/edit.png' %}" alt="edit">
+                                                            Edit</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- content -->
+                                        <div class="col-md-8">
+                                            <div class="step-details">
+                                                <form action="#" id="frmMember" method="post"><input
+                                                        name="__RequestVerificationToken" type="hidden"
+                                                        value="Jwp-57EZCtjAfr-f2uDutpoMhyEpzqTTJycOiSlkUyhEQlQBvTsOz1f0OEx4KzQZtxB4MbtjRXAa8lplDvsrr0Lx_F8BQMx5ribNffNYOhY1">
+                                                    <!-- step 1  -->
+                                                    <div class="step-box active" data-step="1">
+                                                        <div class="step-box-wrapper">
+                                                            <div class="step-box-head">
+                                                                <h3 class="font-600">Join as a member</h3>
+                                                                <p class="m-0 text-danger">(Fields marked with * are
+                                                                    required to fill up)</p>
+                                                            </div>
+                                                            <div class="step-box-body">
+                                                                <div class="email-wrapper no-email-verification active"
+                                                                    id="email-wrapper">
+                                                                    <div class="field-confirmation-wrapper-js">
+                                                                        <div class="row pb-4">
+                                                                            <div class="col-md-8">
+                                                                                <div class="form-group required-group">
+                                                                                    <label for="email"
+                                                                                        class="fs-5 fw-semibold">
+                                                                                        Email <span
+                                                                                            class="required-mark text-danger">*</span>
+                                                                                    </label>
+                                                                                    <input
+                                                                                        class="form-control field-v2 field-initial-js validation-email text-box single-line"
+                                                                                        data-val="true"
+                                                                                        data-val-email="The Email field is not a valid e-mail address."
+                                                                                        id="email"
+                                                                                        name="Person.EmailAddress"
+                                                                                        type="email" value="">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group required-group">
+                                                                                    <label for="Username">Username
+                                                                                    </label>
+                                                                                    <span
+                                                                                        class="required-mark text-danger">*</span>
+                                                                                    <input
+                                                                                        class="form-control text-box single-line"
+                                                                                        id="Username"
+                                                                                        name="Person.Username"
+                                                                                        type="text" value="">
+                                                                                    <span
+                                                                                        class="field-validation-valid text-danger"
+                                                                                        data-valmsg-for="Person.Username"
+                                                                                        data-valmsg-replace="true"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group required-group">
+                                                                                    <label for="Password1">Password
+                                                                                    </label>
+                                                                                    <span
+                                                                                        class="required-mark text-danger">*</span>
+                                                                                    <input
+                                                                                        class="form-control text-box single-line"
+                                                                                        id="Password1"
+                                                                                        name="Person.Password1"
+                                                                                        type="password" value="">
+                                                                                    <span
+                                                                                        class="field-validation-valid text-danger"
+                                                                                        data-valmsg-for="Person.Password1"
+                                                                                        data-valmsg-replace="true"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="col-md-6">
+                                                                                <div class="form-group required-group">
+                                                                                    <label for="Password2">Password confirm
+                                                                                    </label>
+                                                                                    <span
+                                                                                        class="required-mark text-danger">*</span>
+                                                                                    <input
+                                                                                        class="form-control text-box single-line"
+                                                                                        id="Password2"
+                                                                                        name="Person.Password2"
+                                                                                        type="text" value="">
+                                                                                    <span
+                                                                                        class="field-validation-valid text-danger"
+                                                                                        data-valmsg-for="Person.Password2"
+                                                                                        data-valmsg-replace="true"></span>
+                                                                                </div>
+                                                                            </div>                                                                         -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- step 2  -->
+                                                    <div class="step-box" data-step="2">
+                                                        <div class="step-box-wrapper">
+                                                            <div class="step-box-head">
+                                                                <h3 class="font-600">Member Information</h3>
+                                                                <p class="m-0 text-danger">(Fields marked with * are
+                                                                    required to fill up)</p>
+                                                            </div>
+                                                            <div class="step-box-body">
+                                                                <!--Person details-->
+                                                                <div class="row">
+
+                                                                    <div class="col-12">
+                                                                        <p class="font-600 text-medium mb-2 mt-2">Full
+                                                                            Name
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group required-group">
+                                                                            <label for="Person_FirstName">First </label>
+                                                                            <span
+                                                                                class="required-mark text-danger">*</span>
+                                                                            <input
+                                                                                class="form-control text-box single-line"
+                                                                                id="Person_FirstName"
+                                                                                name="Person.FirstName" type="text"
+                                                                                value="">
+                                                                            <span
+                                                                                class="field-validation-valid text-danger"
+                                                                                data-valmsg-for="Person.FirstName"
+                                                                                data-valmsg-replace="true"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label
+                                                                                for="Person_MiddleName">Middle</label>
+                                                                            <input
+                                                                                class="form-control text-box single-line"
+                                                                                id="Person_MiddleName"
+                                                                                name="Person.MiddleName" type="text"
+                                                                                value="">
+                                                                            <span
+                                                                                class="field-validation-valid text-danger"
+                                                                                data-valmsg-for="Person.MiddleName"
+                                                                                data-valmsg-replace="true"></span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group required-group">
+                                                                            <label for="Person_LastName">Last </label>
+                                                                            <span
+                                                                                class="required-mark text-danger">*</span>
+                                                                            <input
+                                                                                class="form-control text-box single-line"
+                                                                                id="Person_LastName"
+                                                                                name="Person.LastName" type="text"
+                                                                                value="">
+                                                                            <span
+                                                                                class="field-validation-valid text-danger"
+                                                                                data-valmsg-for="Person.LastName"
+                                                                                data-valmsg-replace="true"></span>
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                    <div class="col-md-6">
+                                                                        <div
+                                                                            class="form-group required-group phone-number-validator-wrapper">
+                                                                            <label for="phone-number-personal">
+                                                                                Phone Number (Personal) <span
+                                                                                    class="required-mark text-danger">*</span>
+                                                                            </label>
+                                                                            <div
+                                                                                class="iti iti--allow-dropdown iti--separate-dial-code">
+                                                                                <input type="text"
+                                                                                    class="form-control phone-number-validator phone-number-edit input-phone-number"
+                                                                                    id="phone-number-personal"
+                                                                                    data-name="PhoneNumber"
+                                                                                    data-number="" autocomplete="off"
+                                                                                    data-intl-tel-input-id="0"
+                                                                                    placeholder=""
+                                                                                    style="padding-left: 98px;">
+                                                                            </div>
+                                                                            <input class="phone-number-hidden"
+                                                                                id="Person_CellNumber"
+                                                                                name="Person.CellNumber" type="hidden"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div
+                                                                            class="form-group phone-number-validator-wrapper">
+                                                                            <label for="phone-number-home">
+                                                                                Phone Number (Work)
+                                                                            </label>
+                                                                            <div
+                                                                                class="iti iti--allow-dropdown iti--separate-dial-code">
+                                                                                <input type="text"
+                                                                                    class="form-control phone-number-validator phone-number-edit input-phone-number"
+                                                                                    id="phone-number-home"
+                                                                                    data-name="PhoneNumber"
+                                                                                    data-number="" autocomplete="off"
+                                                                                    data-intl-tel-input-id="1"
+                                                                                    placeholder=""
+                                                                                    style="padding-left: 98px;">
+                                                                            </div>
+                                                                            <input class="phone-number-hidden"
+                                                                                id="Person_HomeNumber"
+                                                                                name="Person.HomeNumber" type="hidden"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group required-group">
+                                                                            <label for="Person_MaritalStatus">Marital
+                                                                                Status</label> <span
+                                                                                class="required-mark text-danger">
+                                                                                &nbsp;*</span>
+                                                                            <select class="form-control form-select"
+                                                                                id="Person_MaritalStatus"
+                                                                                name="Person.MaritalStatus">
+                                                                                <option selected="selected" value="">
+                                                                                    --SELECT--</option>
+                                                                                <option value="Single">Single</option>
+                                                                                <option value="Married">Married</option>
+                                                                                <option value="Widowed">Widowed</option>
+                                                                            </select>
+
+                                                                            <span
+                                                                                class="field-validation-valid text-danger"
+                                                                                data-valmsg-for="Person.MaritalStatus"
+                                                                                data-valmsg-replace="true"></span>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="Person_Household">Number of
+                                                                                Children</label>
+                                                                            <input
+                                                                                class="form-control text-box single-line"
+                                                                                data-val="true"
+                                                                                data-val-number="The field Household must be a number."
+                                                                                data-val-required="The Household field is required."
+                                                                                id="Person_Household"
+                                                                                name="Person.Household" type="number"
+                                                                                value="0">
+                                                                            <span
+                                                                                class="field-validation-valid text-danger"
+                                                                                data-valmsg-for="Person.Household"
+                                                                                data-valmsg-replace="true"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="select-with-other-wrapper">
+                                                                            <div class="form-group required-group">
+                                                                                <label
+                                                                                    for="Person_ResidentialStatus">Residential
+                                                                                    Status</label><span
+                                                                                    class="required-mark text-danger">&nbsp;*</span>
+                                                                                <select class="form-select form-control"
+                                                                                    id="Person_ResidentialStatus"
+                                                                                    name="Person.ResidentialStatus">
+                                                                                    <option selected="selected"
+                                                                                        value="">
+                                                                                        --SELECT--</option>
+                                                                                    <option
+                                                                                        value="US CITIZEN/LEGAL RESIDENT">
+                                                                                        US
+                                                                                        CITIZEN/LEGAL RESIDENT</option>
+                                                                                    <option
+                                                                                        value="CANADIAN CITIZEN/LEGAL RESIDENT">
+                                                                                        CANADIAN CITIZEN/LEGAL RESIDENT
+                                                                                    </option>
+                                                                                    <option value="PERMANENT RESIDENT">
+                                                                                        PERMANENT RESIDENT</option>
+                                                                                    <option value="OTHER">OTHER</option>
+                                                                                </select>
+
+                                                                                <span
+                                                                                    class="field-validation-valid text-danger"
+                                                                                    data-valmsg-for="Person.ResidentialStatus"
+                                                                                    data-valmsg-replace="true"></span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="form-group other-wrapper d-none pt-1">
+                                                                                <label for="other-res"
+                                                                                    class="d-none">Other</label>
+                                                                                <input id="other-res" type="text"
+                                                                                    class="form-control"
+                                                                                    name="Person.OtherResidentialStatus">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                                <!-- profession details -->
+                                                                <div class="pt-3">
+                                                                    <h2 class="mb-1 fs-5 fw-semibold">Profession Details
+                                                                    </h2>
+                                                                    <hr class="m-0 mb-2">
+
+                                                                    <div class="row">
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group required-group">
+                                                                                <label
+                                                                                    for="Person_Profession">Profession/Type
+                                                                                    of Work</label><span
+                                                                                    class="required-mark text-danger">&nbsp;*</span>
+                                                                                <input
+                                                                                    class="form-control text-box single-line"
+                                                                                    id="Person_Profession"
+                                                                                    name="Person.Profession" type="text"
+                                                                                    value="">
+                                                                                <span
+                                                                                    class="field-validation-valid text-danger"
+                                                                                    data-valmsg-for="Person.Profession"
+                                                                                    data-valmsg-replace="true"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="consent-section">
+                                                                    <div class="form-group">
+                                                                        <div class="form-check check-group">
+                                                                            <input checked="checked"
+                                                                                class="form-check-input check-md"
+                                                                                data-val="true"
+                                                                                data-val-required="The AddInCommunityDirectory field is required."
+                                                                                data-value="1" id="check-consent"
+                                                                                name="AddInCommunityDirectory"
+                                                                                type="checkbox" value="true"><input
+                                                                                name="AddInCommunityDirectory"
+                                                                                type="hidden" value="false">
+                                                                            <label class="form-check-label"
+                                                                                for="check-consent">
+                                                                                I authorize ICGC to publish my contact
+                                                                                information into ICGC membership
+                                                                                directory
+                                                                            </label>
+                                                                            <input type="hidden"
+                                                                                class="form-control validation-radio"
+                                                                                value="1">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- step 3  -->
+                                                    <!-- step 4  -->
+                                                    <div class="step-box" data-step="3">
+                                                        <div class="step-box-wrapper">
+                                                            <div class="step-box-head">
+                                                                <h3 class="font-600">Membership</h3>
+                                                                <p class="m-0 text-danger">(Fields marked with * are
+                                                                    required to fill up)</p>
+                                                            </div>
+                                                            <div class="step-box-body">
+                                                                <!-- hiding checkbox -->
+
+                                                                <div class="form-group required-group">
+                                                                    <div
+                                                                        class="radio-group radio-group-membership check-group">
+                                                                        <div class="mb-4">
+                                                                            <div
+                                                                                class="form-check form-check-lg platinum ">
+                                                                                <input
+                                                                                    class="form-check-input radio-group-membership"
+                                                                                    type="radio" data-value="platinum"
+                                                                                    name="MembershipType" id="platinum"
+                                                                                    data-membership-type-key="6b8ae4d5-cb75-4ef1-bd9f-9a2569a18ea0"
+                                                                                    data-product-key="prod_authnet_BC0A0FN0GVPFHTQ"
+                                                                                    data-amount="65"
+                                                                                    data-membership-type-selector=".membership-type-key"
+                                                                                    data-product-key-selctor=".membership-product-type-key"
+                                                                                    data-amount-selector=".membership-amount"
+                                                                                    data-freequency="monthly">
+
+                                                                                <label
+                                                                                    class="form-check-label ps-2 text-medium font-600 text-uppercase"
+                                                                                    for="platinum">
+                                                                                    PLATINUM
+                                                                                </label>
+                                                                                <p class="ps-2 lh-1 text-grey mb-2">
+                                                                                    Platinum Membership $750
+                                                                                    ( Automatic Deduction $65/month)</p>
+                                                                                <p
+                                                                                    class="ps-2 fw-semibold fs-5 text-teal m-0">
+                                                                                    $65</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mb-4">
+                                                                            <div class="form-check form-check-lg gold">
+                                                                                <input
+                                                                                    class="form-check-input radio-group-membership"
+                                                                                    type="radio" data-value="gold"
+                                                                                    name="MembershipType" id="gold"
+                                                                                    data-membership-type-key="6762119f-3e17-48da-9e1d-41231496f653"
+                                                                                    data-product-key="prod_authnet_M0JM1NAOVT1ESF7"
+                                                                                    data-amount="45"
+                                                                                    data-membership-type-selector=".membership-type-key"
+                                                                                    data-product-key-selctor=".membership-product-type-key"
+                                                                                    data-amount-selector=".membership-amount"
+                                                                                    data-freequency="monthly">
+
+                                                                                <label
+                                                                                    class="form-check-label ps-2 text-medium font-600 text-uppercase"
+                                                                                    for="gold">
+                                                                                    GOLD
+                                                                                </label>
+                                                                                <p class="ps-2 lh-1 text-grey mb-2">
+                                                                                    Gold
+                                                                                    Membership $500
+                                                                                    ( Automatic Deduction $45/month)</p>
+                                                                                <p
+                                                                                    class="ps-2 fw-semibold fs-5 text-teal m-0">
+                                                                                    $45</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mb-4">
+                                                                            <div
+                                                                                class="form-check form-check-lg silver ">
+                                                                                <input
+                                                                                    class="form-check-input radio-group-membership"
+                                                                                    type="radio" data-value="silver"
+                                                                                    name="MembershipType" id="silver"
+                                                                                    data-membership-type-key="8a2cb36d-0462-4969-bc9a-4b38e1f46dbe"
+                                                                                    data-product-key="prod_authnet_RXXSWRTQ6IJ5KJ5"
+                                                                                    data-amount="25"
+                                                                                    data-membership-type-selector=".membership-type-key"
+                                                                                    data-product-key-selctor=".membership-product-type-key"
+                                                                                    data-amount-selector=".membership-amount"
+                                                                                    data-freequency="monthly">
+
+                                                                                <label
+                                                                                    class="form-check-label ps-2 text-medium font-600 text-uppercase"
+                                                                                    for="silver">
+                                                                                    SILVER
+                                                                                </label>
+                                                                                <p class="ps-2 lh-1 text-grey mb-2">
+                                                                                    Silver
+                                                                                    Membership $250
+                                                                                    ( Automatic Deduction $25/month)</p>
+                                                                                <p
+                                                                                    class="ps-2 fw-semibold fs-5 text-teal m-0">
+                                                                                    $25</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <input type="hidden"
+                                                                            class="form-control validation-radio"
+                                                                            value="">
+                                                                        <input type="hidden"
+                                                                            class="membership-product-type-key"
+                                                                            name="StripeCharge.SelectedProductCode"
+                                                                            id="selectedProductCode">
+                                                                        <input type="hidden" class="membership-type-key"
+                                                                            name="MembershipTypeKey">
+                                                                        <input type="hidden"
+                                                                            class="membership-amount membership-amount-js"
+                                                                            name="StripeCharge.Amount" id="txtAmount">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div>
+                                                                    <hr>
+                                                                    <!-- auto renew -->
+                                                                    <div
+                                                                        class="auto-renew-wrapper auto-renew-wrapper-js mb-3 d-none">
+                                                                        <div class="form-check check-group">
+                                                                            <input class="form-check-input check-md"
+                                                                                type="checkbox" value="true"
+                                                                                id="auto-renew" data-value="auto renew"
+                                                                                name="AutoRenew">
+                                                                            <label class="form-check-label"
+                                                                                for="auto-renew">
+                                                                                Auto Renew
+                                                                            </label>
+
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div
+                                                                        class="donation-wrapper donation-wrapper-js mb-3">
+                                                                        <div class="alert alert-primary">
+                                                                            <h4
+                                                                                class="donation-wrapper-title fw-semibold fs-4">
+                                                                                Donation (Optional)</h4>
+
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            class="form-label fw-semibold text-dark">Donation
+                                                                                            Amount</label>
+                                                                                        <div class="input-group">
+                                                                                            <div
+                                                                                                class="input-group-prepend">
+                                                                                                <span
+                                                                                                    class="input-group-text">$</span>
+                                                                                            </div>
+                                                                                            <input type="number"
+                                                                                                name="DonationAmount"
+                                                                                                id="DonationAmount"
+                                                                                                class="form-control donation-amount donation-amount-js number-positive-js appearance-none"
+                                                                                                placeholder="">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label id="Frequency"
+                                                                                            class="form-label fw-semibold text-dark">Frequency</label>
+                                                                                        <select class="form-select"
+                                                                                            name="DonationFrequency">
+                                                                                            <option value="">Select
+                                                                                            </option>
+                                                                                            <option value="onetime">One
+                                                                                                Time
+                                                                                            </option>
+                                                                                            <option value="monthly">
+                                                                                                Monthly
+                                                                                            </option>
+                                                                                            <option value="yearly">
+                                                                                                Yearly
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <input id="DonationProductKey"
+                                                                                    name="DonationProductKey"
+                                                                                    type="hidden"
+                                                                                    value="prod_authnet_SZ214YVX44N0268">
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="row">
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label for="date-picker">Date
+                                                                                    <!--<span class="required-mark text-danger">*</span>--></label>
+                                                                                <div class="input-group">
+                                                                                    <input type="text" name="StartDate"
+                                                                                        class="form-control form-control-date validation-text date-picker-js"
+                                                                                        id="date-picker" placeholder="">
+                                                                                    <label for="date-picker"
+                                                                                        class="input-group-text"><img
+                                                                                            src="{% static 'media/images/date.png' %}"
+                                                                                            alt="datepicker"></label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="step-box-foot mt-4 d-block">
+                                                        <div class="button-group">
+                                                            <button type="button"
+                                                                class="btn btn-dark btn-lg btn-long btn-prev me-3 btn-navigation-js"
+                                                                data-step="2" data-action="decrease"><img
+                                                                    src="{% static 'media/images/back.png' %}"
+                                                                    alt="prev"><span>Prev</span> </button>
+                                                            <button type="button" onclick="RegistrateUser();"
+                                                                class="btn btn-primary btn-lg btn-long btn-navigation-js"
+                                                                data-text="Next" data-submit-text="Submit" data-step="1"
+                                                                data-action="increase"><span>Next</span> <img
+                                                                    src="{% static 'media/images/next.png' %}"
+                                                                    alt="next">
+                                                            </button>
+                                                            <script>
+                                                                function RegistrateUser() {
+                                                                    let email = $("#email").val();
+                                                                    let Person_FirstName = $("#Person_FirstName").val();
+                                                                    let Person_MiddleName = $("#Person_MiddleName").val();
+                                                                    let Person_LastName = $("#Person_LastName").val();
+                                                                    let Username = $('#Username').val();
+                                                                    let Password1 = $('#Password1').val();
+                                                                    let Password2 = $('#Password2').val();
+                                                                    let phone_number_personal = $("#phone-number-personal").val();
+                                                                    let phone_number_home = $("#phone-number-home").val();
+                                                                    let Person_MaritalStatus = $("#Person_MaritalStatus").val();
+                                                                    let Person_Household = $("#Person_Household").val();
+                                                                    let Person_ResidentialStatus = $("#Person_ResidentialStatus").val();
+                                                                    let other_res = $("#other-res").val();
+                                                                    let Person_Profession = $("#Person_Profession").val();
+                                                                    let mem_platinum = $("#platinum").val();
+                                                                    let mem_gold = $("#gold").val();
+                                                                    let mem_silver = $("#silver").val();
+                                                                    let DonationAmount = $("#DonationAmount").val();
+                                                                    let Frequency = $("#Frequency").val();
+                                                                    let date_picker = $("#date-picker").val();
+
+                                                                    // Получаем элемент кнопки
+                                                                    var button = document.querySelector('.btn-navigation-js.btn.btn-primary.btn-lg.btn-long');
+
+                                                                    // Получаем текущий текст кнопки
+                                                                    var currentText = button.querySelector('span').innerText;
+                                                                    console.log(currentText);
+                                                                    if (currentText == "Submit") {
+                                                                        // Проверяем, является ли текущий текст кнопки "Next"
+
+                                                                        $.ajax({
+                                                                            url: '/register_ajax/',
+                                                                            type: "POST",
+                                                                            headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                                                                            data: {
+                                                                                'email': email,
+                                                                                'Person_FirstName': Person_FirstName,
+                                                                                'Person_MiddleName': Person_MiddleName,
+                                                                                'Person_LastName': Person_LastName,
+                                                                                'Username': Username,
+                                                                                'Password1': Password1,
+                                                                                // 'Password2': Password2,
+                                                                                'phone_number_personal': phone_number_personal,
+                                                                                'phone_number_home': phone_number_home,
+                                                                                'Person_MaritalStatus': Person_MaritalStatus,
+                                                                                'Person_Household': Person_Household,
+                                                                                'Person_ResidentialStatus': Person_ResidentialStatus,
+                                                                                'other_res': other_res,
+                                                                                'Person_Profession': Person_Profession,
+                                                                                'mem_platinum': mem_platinum,
+                                                                                'mem_gold': mem_gold,
+                                                                                'mem_silver': mem_silver,
+                                                                                'DonationAmount': DonationAmount,
+                                                                                'Frequency': Frequency,
+                                                                                'date_picker': date_picker
+                                                                            },
+                                                                            success: function (data) {
+                                                                                console.log(data);
+                                                                                var url = "/";  // Замените на нужный URL-адрес
+                                                                                window.location.href = url;
+                                                                            }
+                                                                        });
+                                                                    }
+
+
+
+                                                                    // console.log("Email", email);
+                                                                    // console.log("Person_FirstName", Person_FirstName);
+                                                                    // console.log("Person_MiddleName", Person_MiddleName);
+                                                                    // console.log("Person_LastName", Person_LastName);
+                                                                    // console.log("phone_number_personal", phone_number_personal);
+                                                                    // console.log("phone_number_home", phone_number_home);
+                                                                    // console.log("Person_MaritalStatus", Person_MaritalStatus);
+                                                                    // console.log("Person_Household", Person_Household);
+                                                                    // console.log("Person_ResidentialStatus", Person_ResidentialStatus);
+                                                                    // console.log("other_res", other_res);
+                                                                    // console.log("Person_Profession", Person_Profession);
+                                                                    // console.log("mem_platinum", mem_platinum);
+                                                                    // console.log("mem_gold", mem_gold);
+                                                                    // console.log("mem_silver", mem_silver);
+                                                                    // console.log("DonationAmount", DonationAmount);
+                                                                    // console.log("Frequency", Frequency);
+                                                                    // console.log("date_picker", date_picker);
+                                                                }
+                                                            </script>
+
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script class="iti-load-utils" async="" src="{% static 'js/register.js' %}"></script>
+
+
+        <!-- <div>
+            <h1>Registration</h1>
+            <p>
+                <label for="id_username">Username:</label>
+                <input type="text" name="username" class="form-control" maxlength="150" autofocus="" required=""
+                    id="id_username">
+                <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+            </p>
+
+
+            <p>
+                <label for="id_first_name">First name:</label>
+                <input type="text" name="first_name" class="form-control" placeholder="First Name" maxlength="12"
+                    minlength="4" required="" id="id_first_name">
+                <span class="helptext">Required: First Name</span>
+            </p>
+
+
+            <p>
+                <label for="id_last_name">Last name:</label>
+                <input type="text" name="last_name" class="form-control" maxlength="12" minlength="4" required=""
+                    id="id_last_name">
+                <span class="helptext">Required: Last Name</span>
+            </p>
+
+
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="text" name="email" class="form-control" maxlength="50" required="" id="id_email">
+                <span class="helptext">Required. Inform a valid email address.</span>
+            </p>
+
+
+            <p>
+                <label for="id_password1">Password:</label>
+                <input type="password" name="password1" class="form-control" required="" id="id_password1">
+                <span class="helptext"></span>
+            </p>
+
+            <div class="password-conditions">
+                <p>Your password can’t be too similar to your other personal information.</p>
+                <p>Your password must contain at least 8 characters.</p>
+                <p>Your password can’t be a commonly used password.</p>
+                <p>Your password can’t be entirely numeric.</p>
+            </div>
+
+
+            <p>
+                <label for="id_password2">Password Confirmation:</label>
+                <input type="password" name="password2" class="form-control" required="" id="id_password2">
+                <span class="helptext">Just Enter the same password, for confirmation</span>
+            </p>
+            <input class="bottom-register" type="submit" value="Register">
+
+            <p>Уже есть аккаунт? Тогда Вы можете <a class="link" href="{% url 'login' %}">войти</a>.</p>
+        </div> -->
+    </form>
+    {% endblock content %}

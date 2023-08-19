@@ -1,0 +1,266 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/timetable.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function Add() {
+        window.location.href = '/timetable/add';
+    }
+
+    function DeleteTimetable(timetable_id) {
+        if (confirm('Вы уверены, что хотите удалить эту новость?')) {
+            $.ajax({
+                url: '/timetable/delete/?timetable_id=' + timetable_id,
+                type: 'GET',
+                success: function (result) {
+                    $('#' + timetable_id).remove();
+                }
+            });
+        }
+    }
+
+
+</script>
+<div>
+    <form>
+        {% csrf_token %}
+        <h1>Расписание молитв</h1>
+        <p>
+            <label>Выбор местоположения</label>
+            <select>
+                <option value="1">Москва</option>
+                <option value="2">Санкт-Петербург</option>
+                <option value="3">Новосибирск</option>
+                <option value="4">Екатеринбург</option>
+                <option value="5">Нижний Новгород</option>
+                <option value="6">Казань</option>
+                <option value="7">Челябинск</option>
+                <option value="8">Омск</option>
+                <option value="9">Самара</option>
+                <option value="10">Ростов-на-Дону</option>
+                <option value="11">Уфа</option>
+                <option value="12">Красноярск</option>
+                <option value="13">Пермь</option>
+                <option value="14">Воронеж</option>
+                <option value="15">Волгоград</option>
+                <option value="16">Краснодар</option>
+                <option value="17">Саратов</option>
+                <option value="18">Тюмень</option>
+                <option value="19">Тольятти</option>
+                <option value="20">Ижевск</option>
+                <option value="21">Барнаул</option>
+                <option value="22">Ульяновск</option>
+                <option value="23">Иркутск</option>
+                <option value="24">Хабаровск</option>
+                <option value="25">Ярославль</option>
+                <option value="26">Владивосток</option>
+                <option value="27">Махачкала</option>
+                <option value="28">Томск</option>
+                <option value="29">Оренбург</option>
+                <option value="30">Кемерово</option>
+                <option value="31">Новокузнецк</option>
+                <option value="32">Рязань</option>
+                <option value="33">Астрахань</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Определение мазхаба</label>
+            <select name="mazhab">
+                <option value="1">Шафииты</option>
+                <option value="2">Ханафиты</option>
+                <option value="3">Малкий</option>
+                <option value="4">Ханбалиты</option>
+                <option value="5">Джафариты</option>
+            </select>
+        </p>
+        {% if request.user.is_superuser %}
+        <input type="button" class="btn btn-primary" value="Добавить строку" onclick="Add();">
+        </input>
+        {% endif %}
+        <h3>
+            <label>Расписание намаза на текущий месяц</label>
+        </h3>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Дата</th>
+                        <th>Время восхода</th>
+                        <th>Время заката</th>
+                        <th>Сатасар</th>
+                        <th>Фаджр</th>
+                        <th>Зухр</th>
+                        <th>Аср</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in timetable_list %}
+                    <tr>
+                        <td>
+                            <span class="id" name="timetable_id">{{ item.timetable_id }}</span>
+                        </td>
+                        <td>
+                            <span class="data">{{ item.date }}</span>
+                            <input type="date" class="edit-data" name="timetable_date" value="{{ item.date }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_sunrise }}</span>
+                            <input type="time" class="edit-data" name="time_sunrise" value="{{ item.time_sunrise }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_sunset }}</span>
+                            <input type="time" class="edit-data" name="time_sunset" value="{{ item.time_sunset }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_satar }}</span>
+                            <input type="time" class="edit-data" name="time_satar" value="{{ item.time_satar }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_fajr }}</span>
+                            <input type="time" class="edit-data" name="time_fajr" value="{{ item.time_fajr }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_zuhr }}</span>
+                            <input type="time" class="edit-data" name="time_zuhr" value="{{ item.time_zuhr }}"
+                                style="display: none;">
+                        </td>
+                        <td>
+                            <span class="data">{{ item.time_asr }}</span>
+                            <input type="time" class="edit-data" name="time_asr" value="{{ item.time_asr }}"
+                                style="display: none;">
+                        </td>
+                        {% if request.user.is_superuser %}
+                        <button class="btn btn-danger" onclick="DeleteTimetable('{{item.timetable_id}}');">
+                            <i class="bi bi-trash"></i> Удалить строку
+                        </button>
+                        {% endif %}
+
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+{% if request.user.is_superuser %}
+<script>
+    // Функция для получения CSRF-токена
+    function getCSRFToken() {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, 10) === 'csrftoken=') {
+                return decodeURIComponent(cookie.substring(10));
+            }
+        }
+        return null;
+    }
+
+    // При клике на ячейку таблицы, меняем на поле ввода
+    $('.data').on('click', function () {
+        var inputElement = $(this).siblings('.edit-data');
+        var originalValue = $(this).text();
+
+        $(this).hide();
+        inputElement.val(originalValue).show();
+        inputElement.focus();
+    });
+
+    // При нажатии Enter или Esc, сохраняем или отменяем изменения
+    $('.edit-data').on('keyup', function (event) {
+        if (event.key === 'Enter') {
+            // Нажатие Enter - сохранение данных
+            saveData($(this));
+        } else if (event.key === 'Escape') {
+            // Нажатие Esc - отмена изменений
+            cancelEdit($(this));
+        }
+    });
+
+    // При потере фокуса полем ввода, сохраняем или отменяем изменения
+    $('.edit-data').on('blur', function () {
+        saveData($(this));
+    });
+
+    // Функция сохранения данных
+    function saveData(inputElement) {
+        var newValue = inputElement.val();
+        var cellElement = inputElement.siblings('.data');
+
+        if (newValue !== '') {
+            cellElement.text(newValue);
+            inputElement.hide();
+            cellElement.show();
+
+            // Получение данных для отправки
+            var rowElement = inputElement.closest('tr');
+            var timetable_id = rowElement.find('[name="timetable_id"]').text();
+            var date = rowElement.find('[name="timetable_date"]').val();
+            var timeSunrise = rowElement.find('[name="time_sunrise"]').val();
+            var timeSunset = rowElement.find('[name="time_sunset"]').val();
+            var timeSatar = rowElement.find('[name="time_satar"]').val();
+            var timeFajr = rowElement.find('[name="time_fajr"]').val();
+            var timeZuhr = rowElement.find('[name="time_zuhr"]').val();
+            var timeAsr = rowElement.find('[name="time_asr"]').val();
+
+            // Формирование данных для отправки
+            var requestData = {
+                timetable_id: timetable_id,
+                date: date,
+                timeSunrise: timeSunrise,
+                timeSunset: timeSunset,
+                timeSatar: timeSatar,
+                timeFajr: timeFajr,
+                timeZuhr: timeZuhr,
+                timeAsr: timeAsr,
+                csrfmiddlewaretoken: getCSRFToken()  // Включение CSRF-токена в данные запроса
+            };
+
+            console.log(requestData);
+
+            // Отправка данных на сервер
+            $.ajax({
+                url: '/timetable/edit/',
+                type: 'POST',
+                data: requestData,
+                beforeSend: function (xhr, settings) {
+                    // Проверка, что запрос не является повторным (добавление заголовка X-CSRFToken)
+                    if (!this.crossDomain) {
+                        xhr.setRequestHeader('X-CSRFToken', getCSRFToken());
+                    }
+                },
+                success: function (response) {
+                    console.log('Данные успешно сохранены');
+                },
+                error: function (xhr, status, error) {
+                    console.log('Ошибка при сохранении данных:', error);
+                }
+            });
+        } else {
+            // Если новое значение пустое, возвращаем исходное значение
+            cancelEdit(inputElement);
+        }
+    }
+
+    // Функция отмены изменений
+    function cancelEdit(inputElement) {
+        var cellElement = inputElement.siblings('.data');
+        var originalValue = cellElement.text();
+
+        inputElement.hide();
+        cellElement.show();
+        inputElement.val(originalValue);
+    }
+</script>
+{% endif %}
+{% endblock content %}

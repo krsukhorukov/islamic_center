@@ -1,0 +1,12 @@
+# Caches files
+*/*/__pycache__
+*/__pycache__
+
+# Non-use DB
+*/db.sqlite3
+
+# Env file
+.env
+venv/
+
+media/uploads/

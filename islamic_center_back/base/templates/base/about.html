@@ -1,0 +1,128 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<div>
+  <form>
+    {% csrf_token %}
+    {% for item in about_us %}
+    <div class="title">
+      <h1 class="data">{{ item.title }}</h1>
+      <input type="text" class="edit-data" value="{{ item.title }}" name="title" style="display: none;">
+    </div>
+    <div class="image-container">
+      <img src="{% static 'media/images/1.jpg' %}" alt="Image">
+      <div class="overlay">
+        <p class="banner-text data">{{ item.text }}</p>
+        <input type="text" class="edit-data" value="{{ item.text }}" name="text" style="display: none;">
+      </div>
+    </div>
+    {% endfor %}
+  </form>
+</div>
+
+{% if request.user.is_superuser %}
+<script>
+  // Функция для получения CSRF-токена
+  function getCSRFToken() {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      if (cookie.substring(0, 10) === 'csrftoken=') {
+        return decodeURIComponent(cookie.substring(10));
+      }
+    }
+    return null;
+  }
+
+  // При клике на ячейку таблицы, меняем на поле ввода
+  $('.data').on('click', function () {
+    var inputElement = $(this).siblings('.edit-data');
+    var originalValue = $(this).text();
+
+    $(this).hide();
+    inputElement.val(originalValue).show();
+    inputElement.focus();
+  });
+
+  // При нажатии Enter или Esc, сохраняем или отменяем изменения
+  $('.edit-data').on('keyup', function (event) {
+    if (event.key === 'Enter') {
+      // Нажатие Enter - сохранение данных
+      saveData($(this));
+    } else if (event.key === 'Escape') {
+      // Нажатие Esc - отмена изменений
+      cancelEdit($(this));
+    }
+  });
+
+  // При потере фокуса полем ввода, сохраняем или отменяем изменения
+  $('.edit-data').on('blur', function () {
+    saveData($(this));
+  });
+
+  // Функция сохранения данных
+  function saveData(inputElement) {
+    var newValue = inputElement.val();
+    var cellElement = inputElement.siblings('.data');
+
+    if (newValue !== '') {
+      cellElement.text(newValue);
+      inputElement.hide();
+      cellElement.show();
+
+      // Получение данных для отправки
+      var rowElement = inputElement.closest('form');
+      var title = rowElement.find('[name="title"]').val();
+      var text = rowElement.find('[name="text"]').val();
+      // Формирование данных для отправки
+      var requestData = {
+        title: title,
+        text: text,
+        csrfmiddlewaretoken: getCSRFToken()  // Включение CSRF-токена в данные запроса
+      };
+
+      console.log(requestData);
+
+      // Отправка данных на сервер
+      $.ajax({
+        url: '/about/edit/',
+        type: 'POST',
+        data: requestData,
+        beforeSend: function (xhr, settings) {
+          // Проверка, что запрос не является повторным (добавление заголовка X-CSRFToken)
+          if (!this.crossDomain) {
+            xhr.setRequestHeader('X-CSRFToken', getCSRFToken());
+          }
+        },
+        success: function (response) {
+          console.log('Данные успешно сохранены');
+        },
+        error: function (xhr, status, error) {
+          console.log('Ошибка при сохранении данных:', error);
+        }
+      });
+    } else {
+      // Если новое значение пустое, возвращаем исходное значение
+      cancelEdit(inputElement);
+    }
+  }
+
+  // Функция отмены изменений
+  function cancelEdit(inputElement) {
+    var cellElement = inputElement.siblings('.data');
+    var originalValue = cellElement.text();
+
+    inputElement.hide();
+    cellElement.show();
+    inputElement.val(originalValue);
+  }
+</script>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  islamic_center_web:
+    build:
+      context: ./islamic_center_back
+      dockerfile: DockerfileDjango
+    ports:
+      - "80:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./media/uploads:/app/media/uploads
+      - ./media/videos:/app/media/videos
+    depends_on:
+      - islamic_center_db
+  islamic_center_db:
+    image: postgres:13
+    container_name: islamic_center_postgres
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - islamic_center_postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  islamic_center_postgres-data:
+  static:

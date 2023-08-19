@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<!-- Ссылку можно переделать на 'login.css', если будут какие-то изменения только для регистрации -->
+
+<form method="POST">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <p>
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150"
+            required="" id="id_username">
+    </p>
+
+    <p>
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+    </p>
+    <input type="submit" value="Login">
+    <p>Нет аккаунта? Тогда Вы можете <a class="link" href="{% url 'register' %}">зарегистрироваться</a>.</p>
+</form>
+{% endblock content %}

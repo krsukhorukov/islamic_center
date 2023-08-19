@@ -1,0 +1,46 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+
+
+<div>
+    <form>
+        <h1>Сотрудники</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Заголовок 1</th>
+                    <th>Заголовок 2</th>
+                    <th>Заголовок 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ячейка 1-1</td>
+                    <td>Ячейка 1-2</td>
+                    <td>Ячейка 1-3</td>
+                </tr>
+                <tr>
+                    <td>Ячейка 2-1</td>
+                    <td>Ячейка 2-2</td>
+                    <td>Ячейка 2-3</td>
+                </tr>
+                <tr>
+                    <td>Ячейка 3-1</td>
+                    <td>Ячейка 3-2</td>
+                    <td>Ячейка 3-3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Где мы находимся</h4>
+        
+        <h1>Карта</h1>
+        <p>8665 State Route 48, Maineville, Ohio 45039</p>
+
+        <p>Телефон: +12345677890</p>
+        <p>Email: admin@admin.com</p>
+    </form>
+</div>
+{% endblock content %}

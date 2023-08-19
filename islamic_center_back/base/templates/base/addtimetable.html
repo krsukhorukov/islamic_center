@@ -1,0 +1,78 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/addnews.css' %}">
+
+<form enctype="multipart/form-data" method="post" id="timetable_form" novalidate="">
+    {% csrf_token %}
+    <div>
+        <div class="form-row field-date">
+            <div>
+                <label class="required" for="id_date">Дата:</label>
+                <input type="date" name="date" required="" id="id_date">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Время восхода:</label>
+                <input type="time" name="time_sunrise" required="" id="id_time_sunrise">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Время заката:</label>
+                <input type="time" name="time_sunset" required="" id="id_time_sunset">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Сатасар:</label>
+                <input type="time" name="time_satar" required="" id="id_time_satsar">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Фаджр:</label>
+                <input type="time" name="time_fajr" required="" id="id_time_fajr">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Зухр:</label>
+                <input type="time" name="time_zuhr" required="" id="id_time_zuhr">
+            </div>
+        </div>
+
+        <div class="form-row field-time">
+            <div>
+                <label class="required" for="id_time">Аср:</label>
+                <input type="time" name="time_asr" required="" id="id_time_asr">
+            </div>
+        </div>
+
+        <div class="submit-row">
+            <input type="submit" value="Save" class="default" name="_save">
+        </div>
+
+        <div id="loading" style="display:none;">Загрузка...</div>
+
+        <script>
+            document.getElementById("mainnews_form").onsubmit = function () {
+                document.getElementById("loading").style.display = "block";
+            };
+        </script>
+
+        <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" data-model-name="mainnews"
+            async=""></script>
+        <script id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js"
+            data-prepopulated-fields="[]"> </script>
+    </div>
+</form>
+
+{% endblock %}

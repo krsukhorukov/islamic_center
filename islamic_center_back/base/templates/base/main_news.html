@@ -1,0 +1,53 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main_news.css' %}">
+
+<script>
+  function DeleteNews(news_id) {
+    if (confirm('Вы уверены, что хотите удалить эту новость?')) {
+      $.ajax({
+        url: '/news/delete/?news_id=' + news_id,
+        type: 'GET',
+        success: function (result) {
+          $('#' + news_id).remove();
+        }
+      });
+    }
+  }
+
+  function AddNews() {
+    window.location.href = '/news/add/';
+  }
+</script>
+
+<div>
+  <form>
+    {% if request.user.is_superuser %}
+    <input type="button" class="btn btn-primary" value="Добавить новость" onclick="AddNews();">
+    </input>
+    {% endif %}
+
+    <div id="news-container">
+      {% for news in news_list %}
+      <div class="news-item {% cycle 'even' 'odd' %}" id="{{ news.id }}">
+        {% if news.image %}
+        <img src="{{ news.image.url }}" alt="{{ news.title }}" class="image">
+        {% endif %}
+        {% if news.video %}
+        <video src="{{ news.video.url }}" controls class="video"></video>
+        {% endif %}
+        <h2 class="title">{{ news.title }}</h2>
+        <p class="text">{{ news.text }}</p> 
+        {% if request.user.is_superuser %}
+        <button class="btn btn-danger" onclick="DeleteNews('{{news.id}}');">
+          <i class="bi bi-trash"></i> Удалить новость
+        </button>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
