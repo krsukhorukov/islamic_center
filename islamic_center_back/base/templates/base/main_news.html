@@ -38,7 +38,7 @@
         <video src="{{ news.video.url }}" controls class="video"></video>
         {% endif %}
         <h2 class="title">{{ news.title }}</h2>
-        <p class="text">{{ news.text }}</p> 
+        <p class="text">{{ news.text }}</p>
         {% if request.user.is_superuser %}
         <button class="btn btn-danger" onclick="DeleteNews('{{news.id}}');">
           <i class="bi bi-trash"></i> Удалить новость

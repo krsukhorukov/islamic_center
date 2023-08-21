@@ -304,7 +304,7 @@ class Contacts(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+
         if self.request.user.is_authenticated:
             user = User.objects.get(id=self.request.user.id)
             lang_model = Language.objects.get(user_id_id=user.id)
@@ -394,10 +394,10 @@ class AddTimetable(TemplateView):
         if form.is_valid():
             form.save()
         return redirect('timetable')
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+
         if self.request.user.is_authenticated:
             user = User.objects.get(id=self.request.user.id)
             lang_model = Language.objects.get(user_id_id=user.id)
