@@ -16,6 +16,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.utils.decorators import method_decorator
 from base.models import Language, News
 from base.models import UserDetails
+from django.template import RequestContext
+
 
 
 
@@ -545,3 +547,22 @@ class GetLanguage(TemplateView):
         else:
             langCookie = request.COOKIES.get('langCookie')
             return JsonResponse({'status': 'ok', 'lang': langCookie})
+
+
+
+class ErrorPages():
+    def handler404(request, *args, **argv):
+        response = render('error_pages/404.html', {},
+                                  context_instance=RequestContext(request))
+        response.status_code = 404
+        return response
+
+    def handler500(request, *args, **argv):
+        response = render('error_pages/500.html', {},
+                                    context_instance=RequestContext(request))
+        response.status_code = 500
+        return response
+    
+
+def custom_404(request, exception):
+    return render(request, 'error_pages/404.html', status=404)

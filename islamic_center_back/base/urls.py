@@ -1,6 +1,9 @@
 from django.urls import path, include
 from .views import *
+from . import views
 from django.contrib.auth.views import LogoutView
+from django.conf.urls import handler404
+from django.conf.urls import handler500
 
 news = [
     path('', News.as_view(), name='news'),
@@ -35,3 +38,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
     path('', Main.as_view(), name='index'),
 ]
+
+handler404 = views.custom_404
+# handler500 = views.handler500
