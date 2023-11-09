@@ -35,6 +35,7 @@ services:
       dockerfile: Dockerfile.nginx
     ports:
       - "80:80"
+      - "70:70"
     depends_on:
       - islamic_center_web
     # networks:
