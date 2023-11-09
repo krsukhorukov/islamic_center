@@ -30,7 +30,7 @@
                 {% for article in news_list %}
                 <li class="card">
                     <div class="card_face"
-                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image_url }});">
+                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image.url }});">
                         <span>{{ article.title }}</span>
                     </div>
                     <div class="card_hidden_content">
@@ -54,7 +54,7 @@
                 {% for article in news_list %}
                 <li class="card">
                     <div class="card_face"
-                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image_url }});">
+                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image.url }});">
                         <span>{{ article.title }}</span>
                     </div>
                     <div class="card_hidden_content">
@@ -78,7 +78,7 @@
                 {% for article in news_list %}
                 <li class="card">
                     <div class="card_face"
-                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image_url }});">
+                        style="background-image: linear-gradient(#0003, #0003), url({{ article.image.url }});">
                         <span>{{ article.title }}</span>
                     </div>
                     <div class="card_hidden_content">
