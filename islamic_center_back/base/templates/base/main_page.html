@@ -18,9 +18,12 @@
     </div>
 
     <div class="main_page_title">
-
-        <span>Исламский центр Мейнвилля</span>
-
+        <span>
+            
+            {% if lang == 'ru' %} Исламский центр Мейнвилля {% endif %}
+            {% if lang == 'en' %} Mainville Islamic Center {% endif %}
+            {% if lang == 'uz' %} Mainville Islom markazi {% endif %}
+        </span>
     </div>
 
     <div class="carousel-main-wrapper">
